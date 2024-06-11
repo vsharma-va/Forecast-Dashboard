@@ -27,7 +27,7 @@ export const load = async (event) => {
     let foundProjects = await individualProject.find({
         user_list: foundUser.email,
     }, { projection: { _id: 0 } }).toArray();
-    if (foundProjects.length == 0) {
+    if (foundProjects.length === 0) {
         return { foundUser: true, userInfo: foundUser, projectsFound: false };
     }
     return { foundUser: true, userInfo: foundUser, projectsFound: true, projectInfo: foundProjects };
